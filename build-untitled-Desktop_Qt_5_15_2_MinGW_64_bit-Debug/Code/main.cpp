@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include <graph.h>
-#include <orgraph.h>
-#include <graphvertex.h>
+#include <GraphLibrary\graph.h>
+#include <GraphLibrary\orgraph.h>
+#include <GraphLibrary\graphvertex.h>
 
 
 using namespace std;
@@ -12,7 +12,6 @@ int main()
     Graph *MainGraph;
     string input;
 
-    cout << "Work made by Alex Makeev 2011 " << endl;
     start:cout << "Hello, will you work with graf ? (input 1/0 (if you work))" << endl;
     getline(cin,input);
     system("cls"); // очищаем консоль
