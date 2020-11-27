@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include <GraphLibrary\graph.h>
-#include <GraphLibrary\orgraph.h>
-#include <GraphLibrary\graphvertex.h>
+#include "GraphLibrary\graph.h"
+#include "GraphLibrary\orgraph.h"
+#include "GraphLibrary\graphvertex.h"
 
 
 using namespace std;
