@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 GraphVertex* Graph::Find(string name)
 {
     for(auto x : GraphsVertex)
@@ -232,3 +233,45 @@ string Graph::ConnectCotegory()
 }
 //Дочернии функции оценки графа
 
+
+void Graph::FindHamiltoniaCycle(GraphVertex *vertex,vector<string>  name_of_passed_vertex)
+{
+        name_of_passed_vertex.push_back(vertex->name);
+        if(name_of_passed_vertex.size() == GraphsVertex.size()) //Если все вершины обошли, то закругляемся
+        {
+            if(find(vertex->child.begin(),vertex->child.end(),GraphsVertex[0])
+                                == vertex->child.end()) //Если финальная вершина не содержит путь
+                return;                                                              //к начальной вершине, то цикл не найден.
+
+            HamiltonianCycleCount++;
+            for(string name : name_of_passed_vertex)
+            {
+                cout << name << " -> ";
+            }
+            cout << GraphsVertex[0]->name << endl; //Закрываем цикл a->b->c->a
+            return;
+        }
+
+        for(int i = 0; i < vertex->child.size();i++)
+        {
+            if( find(name_of_passed_vertex.begin(),name_of_passed_vertex.end(),vertex->child[i]->name)
+                    == name_of_passed_vertex.end())
+            {
+                FindHamiltoniaCycle(vertex->child[i],name_of_passed_vertex);
+            }
+        }
+
+        return;
+}
+
+void Graph::PrintHamiltonianCycles()
+{
+
+    cout << endl << "Hamiltonian cycles: " << endl << endl;
+    vector<string> name_of_passed_vertex;
+    FindHamiltoniaCycle(GraphsVertex[0],name_of_passed_vertex);
+    cout << endl;
+    cout << "Count of Hamiltonian Cycle: " << HamiltonianCycleCount << endl;
+    if(!HamiltonianCycleCount)
+         cout << "No Hamiltonian cycles found" << endl;
+}
