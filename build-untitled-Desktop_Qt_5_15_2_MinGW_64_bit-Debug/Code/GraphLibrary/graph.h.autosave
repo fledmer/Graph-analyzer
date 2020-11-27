@@ -27,6 +27,7 @@ public:
     //Основные функции
     void Input();
     void Analysis();
+    void PrintHamiltonianCycles();
     //Основные функции
 
     void virtual pMatrixOfIncidence();
@@ -36,7 +37,7 @@ public:
     string virtual ConnectCotegory();
     bool FindPath(GraphVertex *start, GraphVertex *end,vector<string> storage);
     bool FindPath(vector<GraphVertex *> GraphsVertex, GraphVertex *start, GraphVertex *end,vector<string> storage);
-    void PrintHamiltonianCycles();
+    
 
 
 };

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
-#include "GraphLibrary\graph.h"
-#include "GraphLibrary\orgraph.h"
-#include "GraphLibrary\graphvertex.h"
+#include <graph.h>
+#include <orgraph.h>
+#include <graphvertex.h>
 
 
 using namespace std;
@@ -21,9 +21,11 @@ int main()
 
     MainGraph->Input();
     MainGraph->Analysis();
+    MainGraph->PrintHamiltonianCycles();
 
     delete(MainGraph);
-    cin >> input;
+    getline(cin,input);
+    system("cls"); // очищаем консоль
     goto start;
     return 0;
 }

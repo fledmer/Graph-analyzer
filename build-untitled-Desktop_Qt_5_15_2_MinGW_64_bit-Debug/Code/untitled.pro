@@ -4,12 +4,12 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        GraphLibrary/graph.cpp \
-        GraphLibrary/graphvertex.cpp \
+        graph.cpp \
+        graphvertex.cpp \
         main.cpp \
-        GraphLibrary/orgraph.cpp
+        orgraph.cpp
 
 HEADERS += \
-   GraphLibrary/ graph.h \
-    GraphLibrary/graphvertex.h \
-    GraphLibrary/orgraph.h
+    graph.h \
+    graphvertex.h \
+    orgraph.h
