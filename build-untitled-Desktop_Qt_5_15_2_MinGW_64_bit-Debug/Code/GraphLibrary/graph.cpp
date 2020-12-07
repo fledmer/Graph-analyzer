@@ -268,6 +268,11 @@ void Graph::PrintHamiltonianCycles()
 {
 
     cout << endl << "Hamiltonian cycles: " << endl << endl;
+    if(GraphsVertex.size() < 3)
+    {
+        cout << "No Hamiltonian cycles found" << endl;
+        return;
+    }
     vector<string> name_of_passed_vertex;
     FindHamiltoniaCycle(GraphsVertex[0],name_of_passed_vertex);
     cout << endl;
