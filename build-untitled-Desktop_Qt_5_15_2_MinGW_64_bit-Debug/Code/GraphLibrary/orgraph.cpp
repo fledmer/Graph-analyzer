@@ -140,7 +140,20 @@ void Orgraph::pMaximumDegree()
             nameIN = vertex->name;
         }
     }
-    cout <<"Maximum Degree IN: " <<maximumDegreeOUT << " Name: " << nameOUT << endl;
-    cout <<"Maximum Degree OUT: " <<maximumDegreeIN << " Name: " << nameIN << endl;
+    cout <<"Maximum Degree IN: " <<maximumDegreeIN << " Name: " << nameOUT << endl;
+    cout <<"Maximum Degree OUT: " <<maximumDegreeOUT << " Name: " << nameIN << endl;
 }
 //Дочернии функции оценки орграфа
+
+
+void Orgraph::PrintHamiltonianCycles()
+{
+
+    cout << endl << "Hamiltonian cycles: " << endl << endl;
+    vector<string> name_of_passed_vertex;
+    FindHamiltoniaCycle(GraphsVertex[0],name_of_passed_vertex);
+    cout << endl;
+    cout << "Count of Hamiltonian Cycle: " << HamiltonianCycleCount << endl;
+    if(!HamiltonianCycleCount)
+         cout << "No Hamiltonian cycles found" << endl;
+}

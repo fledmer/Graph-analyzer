@@ -15,6 +15,7 @@ public:
     void pMaximumDegree();
     string virtual ConnectCotegory();
      //Дочерние функции для анализа
+    void PrintHamiltonianCycles();
 };
 
 #endif // ORGRAPH_H

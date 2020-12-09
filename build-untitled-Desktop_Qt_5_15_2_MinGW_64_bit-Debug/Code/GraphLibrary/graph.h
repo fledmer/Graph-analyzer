@@ -36,7 +36,7 @@ public:
     string virtual ConnectCotegory();
     bool FindPath(GraphVertex *start, GraphVertex *end,vector<string> storage);
     bool FindPath(vector<GraphVertex *> GraphsVertex, GraphVertex *start, GraphVertex *end,vector<string> storage);
-    void PrintHamiltonianCycles();
+    void virtual PrintHamiltonianCycles();
 
 
 };
